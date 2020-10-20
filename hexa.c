@@ -6,11 +6,11 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:44 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/03/08 19:22:22 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/10/20 09:30:05 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int		how_long(long nb)
 {
