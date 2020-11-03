@@ -6,14 +6,14 @@
 #    By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/08 20:05:13 by asfaihi           #+#    #+#              #
-#    Updated: 2020/10/20 09:29:17 by asfaihi          ###   ########.fr        #
+#    Updated: 2020/11/01 13:25:12 by asfaihi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 SRC = ft_printf.c hexa.c libft_functions.c libft_functions_2.c \
-	 	 percent_divider.c percent_s_printers.c printers.c
+	 	 percent_divider.c percent_s_printers.c printers.c percent_p.c
 
 FLAGS = -Wall -Wextra -Werror
 
