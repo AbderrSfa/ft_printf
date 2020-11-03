@@ -2,7 +2,7 @@
 The aim of this project is pretty straight forward; recode printf. This project teaches the ins and outs of using variadic arguments.
 The key to a successful ft_printf is well-structured and extensible code.
 ## Getting Started
-Running `make` will produce a library called libftprintf.a. Use ft_printf() just as you would use printf(). When compiling your code use libftprintf.a.
+Running `make` will produce a library called libftprintf.a. Use ft_printf() just as you would use printf(). When compiling your code use ft_printf.a.
 
 `gcc main.c ft_printf.a`
 ## Functionality
