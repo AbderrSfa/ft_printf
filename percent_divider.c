@@ -6,11 +6,11 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:34 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/01 13:28:59 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/11/03 12:36:31 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	percent_d_rest(t_set *group, int arg)
 {

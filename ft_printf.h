@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:39:53 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/01 13:32:08 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/11/03 12:35:41 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __PRINTF_H
+#ifndef __FT_PRINTF_H
 
-# define __PRINTF_H
+# define __FT_PRINTF_H
 
 # include <string.h>
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef struct		s_set
 {

@@ -6,11 +6,11 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:37 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/02 09:41:18 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/11/03 12:37:23 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	pre_space_print(int width, char c, long arg, t_set *group)
 {
@@ -115,13 +115,13 @@ void	executer(t_set *group, va_list list)
 {
 	if (group->specifier == 'c' || group->specifier == '%')
 		percent_c(group, list);
-	if (group->specifier == 's')
+	else if (group->specifier == 's')
 		percent_s(group, list);
-	if (group->specifier == 'p')
+	else if (group->specifier == 'p')
 		percent_p(group, list);
-	if (group->specifier == 'd' || group->specifier == 'i')
+	else if (group->specifier == 'd' || group->specifier == 'i')
 		percent_d(group, list);
-	if (group->specifier == 'X' || group->specifier == 'x' ||
+	else if (group->specifier == 'X' || group->specifier == 'x' ||
 			group->specifier == 'u')
 		percent_u_x(group, list);
 }

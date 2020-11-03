@@ -6,11 +6,11 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:39 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/01 13:31:18 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/11/03 12:36:01 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	set_flags(t_set *group)
 {
