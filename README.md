@@ -4,7 +4,7 @@ The key to a successful ft_printf is well-structured and extensible code.
 ## Getting Started
 Running `make` will produce a library called libftprintf.a. Use ft_printf() just as you would use printf(). When compiling your code use libftprintf.a.
 
-`gcc main.c libftprintf.a`
+`gcc main.c ft_printf.a`
 ## Functionality
 Just like the real printf, ft_printf allows the following functionality:
 
