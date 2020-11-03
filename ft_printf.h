@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:39:53 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/10/20 09:30:00 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/11/01 13:32:08 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FT_PRINTF_H
+#ifndef __PRINTF_H
 
-# define __FT_PRINTF_H
+# define __PRINTF_H
 
 # include <string.h>
 # include <stdlib.h>
@@ -32,9 +32,6 @@ typedef struct		s_set
 	int				offset;
 }					t_set;
 
-# define CDI s[i] != 'c' && s[i] != 'd' && s[i] != 'i'
-# define UXPER s[i] != 'u' && s[i] != 'x' && s[i] != 'X' && s[i] != '%'
-# define PS s[i] != 'p' && s[i] != 's'
 # define M_UI 4294967296
 
 int					ft_atoi(const char *str);
@@ -59,6 +56,7 @@ void				percent_d(t_set *group, va_list list);
 void				percent_p(t_set *group, va_list list);
 void				percent_d_rest(t_set *group, int arg);
 void				precision(t_set *group, long arg);
+void				percent_p_precision(unsigned long arg, t_set *group);
 void				specifier_printer(char c, long arg, t_set *group);
 void				space_printer(int i, char c, long arg, t_set *group);
 void				zeroes_printer(int i, char c, long arg, t_set *group);
@@ -68,6 +66,9 @@ void				s_space_printer(int width, char *s, int pre, t_set *group);
 void				s_zeroes_printer(int width, char *s, int pre, t_set *group);
 void				deci_to_hexa_upper(long n, t_set *group);
 void				deci_to_hexa_lower(long n, t_set *group);
+void				deci_to_hexa_lower_p(unsigned long n, t_set *group);
+int					hexa_counter_p(unsigned long n);
+void				pre_sp_print_p(int width, unsigned long arg, t_set *group);
 int					hexa_counter(long n);
 
 #endif

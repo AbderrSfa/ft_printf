@@ -6,24 +6,22 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:37 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/10/20 09:30:28 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/11/02 09:41:18 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 void	pre_space_print(int width, char c, long arg, t_set *group)
 {
-	if ((c == 'x' || c == 'X' || c == 'p') && arg)
+	if ((c == 'x' || c == 'X') && arg)
 	{
-		if (c == 'p')
-			width -= 2;
 		if (group->precision < hexa_counter(arg))
 			width -= hexa_counter(arg);
 		else
 			width -= group->precision;
 	}
-	else if (c == 'u' && arg < 0 && (group->precision < how_long(arg + M_UI)))
+	else if (c == 'u' && arg < 0 && (group->precision <= how_long(arg + M_UI)))
 		width -= how_long(arg + M_UI);
 	else
 	{
@@ -34,8 +32,6 @@ void	pre_space_print(int width, char c, long arg, t_set *group)
 	}
 	if ((c == 'd' || c == 'i') && arg < 0 && group->precision >= how_long(arg))
 		width--;
-	if (c == 'p' && !arg)
-		width -= 2;
 	while (width-- > 0)
 		ft_putchar(' ', group);
 }
@@ -51,10 +47,10 @@ void	zeroes_printer(int i, char c, long arg, t_set *group)
 	else if (c == 'p')
 	{
 		ft_putstr("0x", group);
-		if (i > hexa_counter(arg) && group->pre_toggle)
-			i -= hexa_counter(arg);
+		if (i > hexa_counter_p(arg) && group->pre_toggle)
+			i -= hexa_counter_p(arg);
 		else
-			i -= hexa_counter(arg) + 2;
+			i -= hexa_counter_p(arg) + 2;
 	}
 	else if (c == 'u')
 	{
@@ -76,7 +72,7 @@ void	space_printer(int i, char c, long arg, t_set *group)
 	else if (c == 'x' || c == 'X')
 		i -= hexa_counter(arg);
 	else if (c == 'p')
-		i -= hexa_counter(arg) + 2;
+		i -= hexa_counter_p(arg) + 2;
 	else if (c == 'u')
 	{
 		if (arg >= 0)
@@ -105,7 +101,7 @@ void	specifier_printer(char c, long arg, t_set *group)
 	}
 	else if (c == 'p')
 	{
-		deci_to_hexa_lower(arg, group);
+		deci_to_hexa_lower_p(arg, group);
 	}
 	else if (c == '%')
 		ft_putchar('%', group);

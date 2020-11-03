@@ -6,11 +6,11 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:39 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/10/20 09:29:49 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/11/01 13:31:18 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 void	set_flags(t_set *group)
 {
@@ -60,7 +60,8 @@ int		struct_filler_2(char *s, va_list list, t_set *group, int i)
 			group->specifier = s[i + 2];
 			return (i + 2);
 		}
-		while (CDI && PS && UXPER)
+		while (s[i] != 'c' && s[i] != 'd' && s[i] != 'i' && s[i] != 'p' &&
+		s[i] != 's' && s[i] != 'u' && s[i] != 'x' && s[i] != 'X' && s[i] != '%')
 			i++;
 		group->specifier = s[i];
 		group->offset = (i + 1);

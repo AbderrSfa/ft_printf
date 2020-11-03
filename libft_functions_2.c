@@ -6,11 +6,11 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 16:53:52 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/10/20 09:30:12 by asfaihi          ###   ########.fr       */
+/*   Updated: 2020/03/08 17:17:10 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 size_t			ft_strlen(const char *s)
 {
