@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:39:53 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/03 12:35:41 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/05 17:48:32 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t				ft_strlen(const char *s);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 void				ft_putchar(char c, t_set *group);
 void				ft_putstr(char *s, t_set *group);
-int					how_long(long nb);
+int					ft_intsize(long nb);
 void				ft_special_putnbr(long n, t_set *group);
 void				ft_putnbr(long n, t_set *group);
 int					ft_printf(char const *s, ...);
@@ -66,8 +66,8 @@ void				s_zeroes_printer(int width, char *s, int pre, t_set *group);
 void				deci_to_hexa_upper(long n, t_set *group);
 void				deci_to_hexa_lower(long n, t_set *group);
 void				deci_to_hexa_lower_p(unsigned long n, t_set *group);
-int					hexa_counter_p(unsigned long n);
+int					ft_intsize_hexa_p(unsigned long n);
 void				pre_sp_print_p(int width, unsigned long arg, t_set *group);
-int					hexa_counter(long n);
+int					ft_intsize_hexa(long n);
 
 #endif

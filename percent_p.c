@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 13:32:56 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/03 12:36:42 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/05 17:49:14 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	pre_sp_print_p(int width, unsigned long arg, t_set *group)
 	if (arg)
 	{
 		width -= 2;
-		if (group->precision < hexa_counter_p(arg))
-			width -= hexa_counter_p(arg);
+		if (group->precision < ft_intsize_hexa_p(arg))
+			width -= ft_intsize_hexa_p(arg);
 		else
 			width -= group->precision;
 	}
@@ -30,7 +30,7 @@ void	pre_sp_print_p(int width, unsigned long arg, t_set *group)
 		ft_putchar(' ', group);
 }
 
-int		hexa_counter_p(unsigned long n)
+int		ft_intsize_hexa_p(unsigned long n)
 {
 	int		i;
 	int		temp;

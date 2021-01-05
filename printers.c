@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:37 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/03 12:37:23 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/05 17:48:50 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@ void	pre_space_print(int width, char c, long arg, t_set *group)
 {
 	if ((c == 'x' || c == 'X') && arg)
 	{
-		if (group->precision < hexa_counter(arg))
-			width -= hexa_counter(arg);
+		if (group->precision < ft_intsize_hexa(arg))
+			width -= ft_intsize_hexa(arg);
 		else
 			width -= group->precision;
 	}
-	else if (c == 'u' && arg < 0 && (group->precision <= how_long(arg + M_UI)))
-		width -= how_long(arg + M_UI);
+	else if (c == 'u' && arg < 0 && (group->precision <= ft_intsize(arg + M_UI)))
+		width -= ft_intsize(arg + M_UI);
 	else
 	{
-		if (group->precision < how_long(arg) && arg)
-			width -= how_long(arg);
+		if (group->precision < ft_intsize(arg) && arg)
+			width -= ft_intsize(arg);
 		else
 			width -= group->precision;
 	}
-	if ((c == 'd' || c == 'i') && arg < 0 && group->precision >= how_long(arg))
+	if ((c == 'd' || c == 'i') && arg < 0 && group->precision >= ft_intsize(arg))
 		width--;
 	while (width-- > 0)
 		ft_putchar(' ', group);
@@ -41,23 +41,23 @@ void	zeroes_printer(int i, char c, long arg, t_set *group)
 	if (c == 'c' || c == '%')
 		i--;
 	else if (c == 'd' || c == 'i')
-		i -= how_long(arg);
+		i -= ft_intsize(arg);
 	else if (c == 'x' || c == 'X')
-		i -= hexa_counter(arg);
+		i -= ft_intsize_hexa(arg);
 	else if (c == 'p')
 	{
 		ft_putstr("0x", group);
-		if (i > hexa_counter_p(arg) && group->pre_toggle)
-			i -= hexa_counter_p(arg);
+		if (i > ft_intsize_hexa_p(arg) && group->pre_toggle)
+			i -= ft_intsize_hexa_p(arg);
 		else
-			i -= hexa_counter_p(arg) + 2;
+			i -= ft_intsize_hexa_p(arg) + 2;
 	}
 	else if (c == 'u')
 	{
 		if (arg >= 0)
-			i -= how_long(arg);
+			i -= ft_intsize(arg);
 		else
-			i -= how_long(arg + M_UI);
+			i -= ft_intsize(arg + M_UI);
 	}
 	while (i-- > 0)
 		ft_putchar('0', group);
@@ -68,17 +68,17 @@ void	space_printer(int i, char c, long arg, t_set *group)
 	if (c == 'c' || c == '%')
 		i--;
 	else if (c == 'd' || c == 'i')
-		i -= how_long(arg);
+		i -= ft_intsize(arg);
 	else if (c == 'x' || c == 'X')
-		i -= hexa_counter(arg);
+		i -= ft_intsize_hexa(arg);
 	else if (c == 'p')
-		i -= hexa_counter_p(arg) + 2;
+		i -= ft_intsize_hexa_p(arg) + 2;
 	else if (c == 'u')
 	{
 		if (arg >= 0)
-			i -= how_long(arg);
+			i -= ft_intsize(arg);
 		else
-			i -= how_long(arg + M_UI);
+			i -= ft_intsize(arg + M_UI);
 	}
 	while (i-- > 0)
 		ft_putchar(' ', group);

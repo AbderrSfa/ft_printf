@@ -6,13 +6,13 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:44 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/03 12:35:57 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/05 17:45:19 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		how_long(long nb)
+int		ft_intsize(long nb)
 {
 	int		l;
 
@@ -32,7 +32,7 @@ int		how_long(long nb)
 	return (l);
 }
 
-int		hexa_counter(long n)
+int		ft_intsize_hexa(long n)
 {
 	int		i;
 	int		temp;
