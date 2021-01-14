@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:39:53 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/01/05 17:48:32 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/14 10:54:44 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ typedef struct		s_set
 int					ft_atoi(const char *str);
 size_t				ft_strlen(const char *s);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
-void				ft_putchar(char c, t_set *group);
-void				ft_putstr(char *s, t_set *group);
+void				ft_putchar_g(char c, t_set *group);
+void				ft_putstr_g(char *s, t_set *group);
 int					ft_intsize(long nb);
 void				ft_special_putnbr(long n, t_set *group);
-void				ft_putnbr(long n, t_set *group);
+void				ft_putnbr_g(long n, t_set *group);
 int					ft_printf(char const *s, ...);
 void				struct_filler(char *s, va_list list, t_set *group);
 int					struct_filler_2(char *s, va_list list, t_set *group, int i);

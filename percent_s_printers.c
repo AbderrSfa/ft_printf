@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:30 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/03 12:36:52 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/14 10:58:20 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	s_zeroes_printer(int width, char *s, int precision, t_set *group)
 	else
 		width -= precision;
 	while (width-- > 0)
-		ft_putchar('0', group);
+		ft_putchar_g('0', group);
 }
 
 void	s_space_printer(int width, char *s, int precision, t_set *group)
@@ -32,7 +32,7 @@ void	s_space_printer(int width, char *s, int precision, t_set *group)
 	else
 		width -= precision;
 	while (width-- > 0)
-		ft_putchar(' ', group);
+		ft_putchar_g(' ', group);
 }
 
 void	specifier_percent_s(char *s, int precision, t_set *group)
@@ -43,12 +43,12 @@ void	specifier_percent_s(char *s, int precision, t_set *group)
 	if (group->pre_toggle)
 	{
 		while (i < precision && i < (int)ft_strlen(s))
-			ft_putchar(s[i++], group);
+			ft_putchar_g(s[i++], group);
 	}
 	else
 	{
 		while (s[i])
-			ft_putchar(s[i++], group);
+			ft_putchar_g(s[i++], group);
 	}
 }
 
@@ -86,7 +86,7 @@ void	precision(t_set *group, long arg)
 	{
 		if (group->width && !group->left_field)
 			pre_space_print(group->width, group->specifier, arg, group);
-		ft_putchar('-', group);
+		ft_putchar_g('-', group);
 		zeroes_printer(group->precision + 1, group->specifier, arg, group);
 		ft_special_putnbr(arg, group);
 		if (group->width && group->left_field)

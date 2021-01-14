@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:44 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/01/05 17:45:19 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/14 10:56:22 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	deci_to_hexa_lower(long n, t_set *group)
 
 	i = 0;
 	if (n == 0)
-		ft_putchar('0', group);
+		ft_putchar_g('0', group);
 	if (n < 0)
 		n = n + 4294967296;
 	while (n)
@@ -76,7 +76,7 @@ void	deci_to_hexa_lower(long n, t_set *group)
 		n = n / 16;
 	}
 	while (i)
-		ft_putchar(buffer[--i], group);
+		ft_putchar_g(buffer[--i], group);
 }
 
 void	deci_to_hexa_upper(long n, t_set *group)
@@ -87,7 +87,7 @@ void	deci_to_hexa_upper(long n, t_set *group)
 
 	i = 0;
 	if (n == 0)
-		ft_putchar('0', group);
+		ft_putchar_g('0', group);
 	if (n < 0)
 		n = n + 4294967296;
 	while (n)
@@ -100,7 +100,7 @@ void	deci_to_hexa_upper(long n, t_set *group)
 		n = n / 16;
 	}
 	while (i)
-		ft_putchar(buffer[--i], group);
+		ft_putchar_g(buffer[--i], group);
 }
 
 void	star_converter(t_set *group)

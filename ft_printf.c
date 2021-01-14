@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:39 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/03 12:36:01 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/14 10:55:50 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ int		ft_printf(char const *s, ...)
 		}
 		if (!s[i])
 			break ;
-		ft_putchar(s[i++], &group);
+		ft_putchar_g(s[i++], &group);
 	}
 	va_end(list);
 	return (group.ret);

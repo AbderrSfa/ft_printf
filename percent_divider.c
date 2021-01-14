@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:34 by asfaihi           #+#    #+#             */
-/*   Updated: 2020/11/03 12:36:31 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/14 10:59:04 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	percent_d(t_set *group, va_list list)
 		precision(group, arg);
 	else if (arg < 0 && !group->left_field && group->zeroes)
 	{
-		ft_putchar('-', group);
+		ft_putchar_g('-', group);
 		zeroes_printer(group->width, group->specifier, arg, group);
 		ft_special_putnbr(arg, group);
 	}

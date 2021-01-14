@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 16:38:37 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/01/05 17:48:50 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/14 10:57:53 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	pre_space_print(int width, char c, long arg, t_set *group)
 	if ((c == 'd' || c == 'i') && arg < 0 && group->precision >= ft_intsize(arg))
 		width--;
 	while (width-- > 0)
-		ft_putchar(' ', group);
+		ft_putchar_g(' ', group);
 }
 
 void	zeroes_printer(int i, char c, long arg, t_set *group)
@@ -46,7 +46,7 @@ void	zeroes_printer(int i, char c, long arg, t_set *group)
 		i -= ft_intsize_hexa(arg);
 	else if (c == 'p')
 	{
-		ft_putstr("0x", group);
+		ft_putstr_g("0x", group);
 		if (i > ft_intsize_hexa_p(arg) && group->pre_toggle)
 			i -= ft_intsize_hexa_p(arg);
 		else
@@ -60,7 +60,7 @@ void	zeroes_printer(int i, char c, long arg, t_set *group)
 			i -= ft_intsize(arg + M_UI);
 	}
 	while (i-- > 0)
-		ft_putchar('0', group);
+		ft_putchar_g('0', group);
 }
 
 void	space_printer(int i, char c, long arg, t_set *group)
@@ -81,7 +81,7 @@ void	space_printer(int i, char c, long arg, t_set *group)
 			i -= ft_intsize(arg + M_UI);
 	}
 	while (i-- > 0)
-		ft_putchar(' ', group);
+		ft_putchar_g(' ', group);
 }
 
 void	specifier_printer(char c, long arg, t_set *group)
@@ -89,22 +89,22 @@ void	specifier_printer(char c, long arg, t_set *group)
 	if (c != '%' && c != 'c' && group->pre_toggle && !group->precision && !arg)
 		return ;
 	if (c == 'c')
-		ft_putchar(arg, group);
+		ft_putchar_g(arg, group);
 	else if (c == 'd' || c == 'i')
-		ft_putnbr(arg, group);
+		ft_putnbr_g(arg, group);
 	else if (c == 'u')
 	{
 		if (arg > 0 || arg == 0)
-			ft_putnbr(arg, group);
+			ft_putnbr_g(arg, group);
 		else
-			ft_putnbr(arg + M_UI, group);
+			ft_putnbr_g(arg + M_UI, group);
 	}
 	else if (c == 'p')
 	{
 		deci_to_hexa_lower_p(arg, group);
 	}
 	else if (c == '%')
-		ft_putchar('%', group);
+		ft_putchar_g('%', group);
 	else if (c == 'x')
 		deci_to_hexa_lower(arg, group);
 	else if (c == 'X')

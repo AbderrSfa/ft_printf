@@ -6,7 +6,7 @@
 /*   By: asfaihi <asfaihi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 13:32:56 by asfaihi           #+#    #+#             */
-/*   Updated: 2021/01/05 17:49:14 by asfaihi          ###   ########.fr       */
+/*   Updated: 2021/01/14 10:58:51 by asfaihi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	pre_sp_print_p(int width, unsigned long arg, t_set *group)
 	if (!arg)
 		width -= 2;
 	while (width-- > 0)
-		ft_putchar(' ', group);
+		ft_putchar_g(' ', group);
 }
 
 int		ft_intsize_hexa_p(unsigned long n)
@@ -61,7 +61,7 @@ void	deci_to_hexa_lower_p(unsigned long n, t_set *group)
 
 	i = 0;
 	if (n == 0)
-		ft_putchar('0', group);
+		ft_putchar_g('0', group);
 	if (n < 0)
 		n = n + 4294967296;
 	while (n)
@@ -74,7 +74,7 @@ void	deci_to_hexa_lower_p(unsigned long n, t_set *group)
 		n = n / 16;
 	}
 	while (i)
-		ft_putchar(buffer[--i], group);
+		ft_putchar_g(buffer[--i], group);
 }
 
 void	percent_p_precision(unsigned long arg, t_set *group)
@@ -99,7 +99,7 @@ void	percent_p(t_set *group, va_list list)
 		percent_p_precision(arg, group);
 	else if (group->left_field)
 	{
-		ft_putstr("0x", group);
+		ft_putstr_g("0x", group);
 		specifier_printer(group->specifier, arg, group);
 		space_printer(group->width, group->specifier, arg, group);
 	}
@@ -110,7 +110,7 @@ void	percent_p(t_set *group, va_list list)
 		else
 			space_printer(group->width, group->specifier, arg, group);
 		if (!group->zeroes)
-			ft_putstr("0x", group);
+			ft_putstr_g("0x", group);
 		specifier_printer(group->specifier, arg, group);
 	}
 }
